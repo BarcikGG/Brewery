@@ -1,0 +1,38 @@
+﻿<Page x:Class="FinalWPF.TenPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FinalWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TenPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="DataGridDB" Grid.ColumnSpan="6" SelectionChanged="DataGridDB_SelectionChanged" Margin="20,0,20,0"/>
+
+        <Label Content="Review text" Grid.Row="1" Grid.Column="0" FontFamily="Gilroy" Margin="15,0,20,0"/>
+        <Label Content="order_item id" Grid.Row="1" Grid.Column="1" FontFamily="Gilroy" Margin="15,0,20,0"/>
+        <Label Content="Review date" Grid.Row="1" Grid.Column="2" FontFamily="Gilroy" Margin="15,0,20,0"/>
+
+        <TextBox x:Name="ReviewText" Text="" Grid.Row="2" Margin="20,5,0,5"/>
+        <ComboBox x:Name="OrderItemIDBox" Grid.Row="2" Grid.Column="1" Margin="20,5,20,5" SelectionChanged="OrderItemIDBox_SelectionChanged" VerticalAlignment="Stretch"/>
+        <DatePicker x:Name="PlacedDate" Grid.Row="2" Grid.Column="2" Margin="20,5,20,5" SelectedDateChanged="PlacedDate_SelectedDateChanged" VerticalAlignment="Stretch"/>
+        <Button x:Name="AddBtn" Content="Add" Grid.Row="3" Grid.ColumnSpan="2" Click="AddBtn_Click" Margin="20,0,20,5" Height="32" VerticalAlignment="Bottom" Background="White" BorderBrush="#FF4EB73A" Foreground="#FF4EB73A"/>
+        <Button x:Name="EditBtn" Content="Apply edit" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Click="EditBtn_Click" Margin="20,0,20,5" Height="32" VerticalAlignment="Bottom" Background="#FFF6D430" BorderBrush="#FFF6D430" Foreground="Black"/>
+    </Grid>
+</Page>
